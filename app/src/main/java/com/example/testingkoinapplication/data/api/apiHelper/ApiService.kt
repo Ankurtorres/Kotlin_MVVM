@@ -1,6 +1,6 @@
-package com.example.testingkoinapplication.api
+package com.example.testingkoinapplication.data.api.apiHelper
 
-import com.example.testingkoinapplication.model.User
+import com.example.testingkoinapplication.data.api.model.User
 import retrofit2.Response
 import retrofit2.http.GET
 

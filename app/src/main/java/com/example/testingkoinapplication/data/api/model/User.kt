@@ -1,4 +1,4 @@
-package com.example.testingkoinapplication.model
+package com.example.testingkoinapplication.data.api.model
 
 import com.squareup.moshi.Json
 
