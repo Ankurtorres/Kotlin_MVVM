@@ -17,13 +17,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val appModule = module {
     single { provideOkHttpClient() }
-    single { provideRetrofit(get(), com.example.testingkoinapplication.BuildConfig.BASE_URL) }
-    single { provideApiService(get()) }
+    single { provideRetrofit(okHttpClient=get(), com.example.testingkoinapplication.BuildConfig.BASE_URL) }
+    single { provideApiService(retrofit=get()) }
     single { provideNetworkHelper(androidContext()) }
 
-    single<ApiHelper> {
-        return@single ApiHelperImp(get())
-    }
+    single<ApiHelper> { ApiHelperImp(apiService=get()) }
 }
 
 private fun provideNetworkHelper(context: Context) = NetworkHelper(context)
